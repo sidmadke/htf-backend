@@ -7,11 +7,16 @@ const groceryPrices = require('./groceryPrices');
 const electronicsPrices = require('./electronicsPrices');
 const furniturePrices = require('./furniturePrices');
 const foodPrices = require('./foodPrices');
+const cors=require('cors');
 
 const app = express();
+app.use(cors());
+
 const port = 4000;
 
 app.use(bodyParser.json());
+
+
 
 // Endpoint to fetch beauty product prices
 app.post('/beauty', async (req, res) => {
